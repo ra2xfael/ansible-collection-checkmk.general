@@ -39,7 +39,6 @@
 
 - name: "Downloads Management."
   when: not 'check-mk-' + __checkmk_server_edition_mapping[checkmk_server_edition] + '-' +checkmk_server_version in ansible_facts.packages
-        not checkmk_server_local_binary is defined
   block:
 
     - name: "Download Checkmk Server Setup."
@@ -74,7 +73,7 @@
       when: checkmk_server_local_binary is true
 
     - name: "Copy local GPG Key."
-      ansible.built.copy:
+      ansible.builtin.copy:
         src: "{{ checkmk_server_local_gpg_path }}"
         dest: "/tmp/Check_MK-pubkey.gpg"
         mode: "0640"
