@@ -56,3 +56,7 @@ checkmk_server_epel_gpg_check: 'true'
 
 checkmk_server_cleanup: 'false'
 checkmk_server_no_log: 'true'
+
+checkmk_server_local_binary: 'false'
+checkmk_server_local_binary_path: 'checkmk-file'
+checkmk_server_local_gpg_path: 'path.gpg'
